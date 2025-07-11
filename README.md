@@ -4,6 +4,8 @@ W3Schools Tutorial on VUE.js, demonstrating VUE's capabilities and intended for 
 You can find the tutorial here: https://www.w3schools.com/vue/index.php
 Use this as a means to practice for the Certification.
 
+Each directory is meant to coincide with one of the Chapters of the Tutorial.
+
 ## 🚀 Examples Include
 
 - Basic v-if/v-else conditionals
