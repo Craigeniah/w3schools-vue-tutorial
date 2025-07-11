@@ -1,6 +1,8 @@
 # W3Schools Vue.js Tutorial
 
 W3Schools Tutorial on VUE.js, demonstrating VUE's capabilities and intended for personal practice.
+You can find the tutorial here: https://www.w3schools.com/vue/index.php
+Use this as a means to practice for the Certification.
 
 ## 🚀 Examples Include
 
