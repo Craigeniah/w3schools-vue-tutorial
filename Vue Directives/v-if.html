@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+
+        <!-- v-if & v-else -->
+        <p v-if="inStock">
+            in stock
+        </p>
+        <p v-else>
+            not in-stock
+        </p>
+
+        <!-- v-if / v-else with comparison operators -->
+        <p v-if="typewriterCount > 0">
+            typewriters in stock
+        </p>
+        <p v-else>
+            typewriters not in-stock
+        </p>
+
+        <!-- example with v-if, v-else-if and v-else -->
+        <p v-if="typewriterCount > 3">
+            typewriters in stock
+        </p>
+        <p v-else-if="typewriterCount > 0">
+            typewriters in-stock, selling out soon
+        </p>
+        <p v-else>
+            typewriters not in-stock
+        </p>
+
+        <!-- using the return value from a function, checks the variable text for Dragon Ball Z -->
+         <p v-if="text.includes('Dragon Ball Z')">One of my favorite animes is Dragon Ball Z.</p>
+         <p v-else>Dragon Ball Z was not found in the text</p>
+
+         <!-- The example above can be expanded to show that v-if also can create other tags like <div> and <img> tags: -->
+        <div v-if="text.includes('Trigun')">
+            <p>The text includes the word Trigun</p>
+            <img src="https://media1.tenor.com/m/Rg8yuqJHeqwAAAAC/sanjiclops-vash.gif" alt="Vash the Stamped">
+        </div>
+        <p v-else>Trigun was not in the text</p>
+
+        <!-- expanded even further -->
+         <!-- The example above can be expanded to show that v-if also can create other tags like <div> and <img> tags: -->
+        <div v-if="text.includes('Naruto')">
+            <p>The text includes the word Naruto</p>
+        </div>
+        <div v-else-if="text.includes('Cowboy Bebop')">
+            <p>CowBoy Bebop was in the text, but not Naruto</p>
+            <img src="https://media1.tenor.com/m/u_CPHaTKNpoAAAAd/cowboy-bebop-jet-black.gif" alt="Jet Black from Cowboy Bebop making peppers">
+        </div>
+        <p v-else>
+            Cowboy Bebop and Naruto were not in the text
+        </p>
+
+    </div>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    inStock: true,
+                    typewriterCount: 1,
+                    text: 'I like Trigun, Dragon Ball Z, Cowboy Bebop, the list goes on.'
+                }
+            }
+        });
+
+        app.mount('#app');
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3 Schools Vue Tutorial</title>
+
+    <style>
+        .pinkBG {
+            background-color: lightpink;
+            height: 500px;
+            width: 500px;
+            display: grid;
+            place-items: center;
+        }
+
+        img {
+            max-width: 98%;
+            max-height: 98%;
+        }
+
+        .blue-p {
+            padding: 20px;
+            width: calc(500px - 40px);
+            border: dashed black 1px;
+            background-color: lightcoral;
+            text-align: center;
+        }
+
+        .important-div {
+            padding: 20px;
+            width: calc(500px - 40px);
+            border: dashed black 1px;
+            margin: 1rem 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+
+        <!-- v-bind directive example -->
+        <!-- <div v-bind:class="vueClass"></div> -->
+        <!-- this is the same as -->
+        <!-- this binds a class -->
+        <div :class="vueClass">
+
+            <img :src="url" :alt="caption">
+
+        </div>
+
+        <!-- doing fontSize here is like doing font-size {} -->
+        <p
+            class="blue-p"
+            :style="{ 
+                fontSize: size + 'rem',
+                color: 'lightpink',
+                fontWeight: '600',
+                backgroundColor: 'hsl(' +bgVal + ', 80%, 80%)'
+            }" 
+        >
+            Caption: {{ caption }}
+        </p>
+
+        <!-- you could also write it like this with kabob case, but it's not recommended -->
+        <!-- 
+        <div v-bind:style="{ 'font-size': size + 'px' }">
+            Text example
+        </div> 
+        -->
+
+        <!-- The background color is set with a JavaScript conditional (ternary) expression depending on whether the 'isImportant' data property value is 'true' or 'false'. -->
+        <div 
+            class="important-div" 
+            :style="{ backgroundColor: isImportant ? 'lightcoral' : 'lightgray' }"
+        >
+            Background color based on importance
+        </div>
+
+        <!-- you can set a class to true -->
+         <div :class="{ 'important-div': true }">
+            Setting a class based on boolean value, not sure why you'd do this though
+         </div>
+
+         <div :class="{ pinkBG: isImportant }"></div>
+
+    </div>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    vueClass: 'pinkBG',
+                    url: 'https://pbs.twimg.com/media/F5X3SLNWIAABk6w?format=jpg',
+                    size: 1,
+                    caption: 'See You Space Cowboy',
+                    bgVal: 180,
+                    isImportant: true
+
+                }
+            }
+        });
+
+        app.mount('#app');
+    </script>
+</body>
+</html>
