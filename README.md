@@ -19,10 +19,15 @@ Each directory is meant to coincide with one of the Chapters of the Tutorial.
 ## 📋 Project Structure
 
 ```
-vue-directives-tutorial/
+w3schools-vue-tutorial/
+│
+├── Vue Intro/
+│   └── index.html
 │
 └── Vue Directives/
-    └── v-if.html
+    ├── v-if.html
+    ├── v-show.html
+    └── v-bind.html
 ```
 
 ## 🛠️ Setup
