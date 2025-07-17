@@ -23,8 +23,8 @@ w3schools-vue-tutorial/
     - [index.html](https://craigeniah.github.io/w3schools-vue-tutorial/01-Vue_Intro/index.html)
 - Vue Directives/
     - [v-if.html](https://craigeniah.github.io/w3schools-vue-tutorial/02-Vue_Directives/v-if.html)
-    - [v-show.html](https://craigeniah.github.io/w3schools-vue-tutorial/02-Vue_Directives/v-show.html)
     - [v-bind.html](https://craigeniah.github.io/w3schools-vue-tutorial/02-Vue_Directives/v-bind.html)
+    - [v-show.html](https://craigeniah.github.io/w3schools-vue-tutorial/02-Vue_Directives/v-show.html)
 
 ## 🛠️ Setup
 
