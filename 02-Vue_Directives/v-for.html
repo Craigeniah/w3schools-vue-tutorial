@@ -8,14 +8,7 @@
 </head>
 <body>
     <div id="app">
-        <!-- example 1, if showDiv is true then the div is shown, if it's false it's hidden but not removed -->
-        <div v-show="showDiv">This div tag can be hidden</div>
 
-        <br>
-
-        <!-- example 2, if v-if destroys the div if showDiv is false, but shows it if it's true -->
-         <div v-show="showDiv">Div with v-show</div>
-         <div v-if="showDiv">Div tag with v-if</div>
     </div>
     
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -25,8 +18,7 @@
             data() {
                 return {
                     // data properties
-                    // set this to false to see the div's change
-                    showDiv: false
+
                 }
             }
         });
