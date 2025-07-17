@@ -5,9 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>W3 Schools Vue Tutorial</title>
 
+      <style>
+        #app > div {
+            border: solid black 1px;
+            width: 80%;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        img {
+            width: 70px;
+            margin: 10px;
+        }
+
+        figure {
+            text-align: center;
+            border: 4px dotted darkgray;
+        }
+  </style>
+
 </head>
 <body>
     <div id="app">
+
+        <!-- example 1, list rendering -->
+         <p>List Rendering:</p>
+         <div>
+            <ol>
+                <li v-for="x in potatoeFoods">{{ x }}</li>
+            </ol>
+         </div>
+
+         <br>
+
+        <!-- example 2, loop through an Array using v-bind -->
+        <p>Loop through an array:</p>
+        <div>
+            <img v-for="x in manyFoods" :src="baseURL + x" alt="">
+        </div>
+
+        <br>
+
+        <!-- example 3, loop through an array of objects -->
+         <p>Loop through an array of objects:</p>
+         <div>
+            <figure v-for="x in arrayOfObjects">
+                <img :src="baseURL + x.url" :alt="x.name">
+                <figCaption>{{ x.name }}</figCaption>
+            </figure>
+         </div>
+
+         <!-- example 4, get the index -->
+         <p>get the index:</p>
+         <div>
+            <p v-for="(x, index) in arrayOfObjects">
+                {{ index }}: "{{ x }}" <br>
+            </p>
+         </div>
 
     </div>
     
@@ -18,7 +73,54 @@
             data() {
                 return {
                     // data properties
-
+                    // array
+                    potatoeFoods: [
+                        'mashed potatoes',
+                        'french fries',
+                        'baked potatoes',
+                        'whiskey',
+                        'scalloped potatoes',
+                        'au gratin potatoes'
+                    ],
+                    baseURL: 'https://www.w3schools.com/vue/',
+                    manyFoods: [
+                        'img_salad.svg',
+                        'img_cake.svg',
+                        'img_soup.svg',
+                        'img_fish.svg',
+                        'img_pizza.svg',
+                        'img_rice.svg'
+                    ],
+                    arrayOfObjects: [
+                        {   
+                            name: 'Burrito', 
+                            url: 'img_burrito.svg'
+                        },
+                        {   
+                            name: 'Salad', 
+                            url: 'img_salad.svg'
+                        },
+                        {   
+                            name: 'Cake', 
+                            url: 'img_cake.svg'
+                        },
+                        {   
+                            name: 'Soup', 
+                            url: 'img_soup.svg'
+                        },
+                        {   
+                            name: 'Fish', 
+                            url: 'img_fish.svg'
+                        },
+                        {   
+                            name: 'Pizza', 
+                            url: 'img_pizza.svg'
+                        },
+                        {   
+                            name: 'Rice', 
+                            url: 'img_rice.svg'
+                        }
+                    ]
                 }
             }
         });
