@@ -22,12 +22,12 @@ Each directory is meant to coincide with one of the Chapters of the Tutorial.
 w3schools-vue-tutorial/
 │
 ├── Vue Intro/
-│   └── index.html
+│   └── [index.html](https://github.com/Craigeniah/w3schools-vue-tutorial/blob/main/01-Vue_Intro/index.html)
 │
 └── Vue Directives/
-    ├── v-if.html
-    ├── v-show.html
-    └── v-bind.html
+    ├── [v-if.html](https://github.com/Craigeniah/w3schools-vue-tutorial/blob/main/02-Vue_Directives/v-if.html)
+    ├── [v-show.html](https://github.com/Craigeniah/w3schools-vue-tutorial/blob/main/02-Vue_Directives/v-show.html)
+    └── [v-bind.html](https://github.com/Craigeniah/w3schools-vue-tutorial/blob/main/02-Vue_Directives/v-bind.html)
 ```
 
 ## 🛠️ Setup
