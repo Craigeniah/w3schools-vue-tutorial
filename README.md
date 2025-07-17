@@ -19,12 +19,13 @@ Each directory is meant to coincide with one of the Chapters of the Tutorial.
 ## 📋 Project Structure
 
 w3schools-vue-tutorial/
-- Vue Intro/
+- 01-Vue_Intro/
     - [index.html](https://craigeniah.github.io/w3schools-vue-tutorial/01-Vue_Intro/index.html)
-- Vue Directives/
+- 02-Vue_Directives/
     - [v-if.html](https://craigeniah.github.io/w3schools-vue-tutorial/02-Vue_Directives/v-if.html)
     - [v-bind.html](https://craigeniah.github.io/w3schools-vue-tutorial/02-Vue_Directives/v-bind.html)
     - [v-show.html](https://craigeniah.github.io/w3schools-vue-tutorial/02-Vue_Directives/v-show.html)
+    - [v-for.html](https://craigeniah.github.io/w3schools-vue-tutorial/02-Vue_Directives/v-for.html)
 
 ## 🛠️ Setup
 
