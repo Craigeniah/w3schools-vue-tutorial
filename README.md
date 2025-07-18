@@ -16,6 +16,8 @@ Each directory is meant to coincide with one of the Chapters of the Tutorial.
 - Working with includes() method
 - Nested conditional structures
 
+Work In Progress ...
+
 ## 📋 Project Structure
 
 w3schools-vue-tutorial/
@@ -26,6 +28,8 @@ w3schools-vue-tutorial/
     - [v-bind.html](https://craigeniah.github.io/w3schools-vue-tutorial/02-Vue_Directives/v-bind.html)
     - [v-show.html](https://craigeniah.github.io/w3schools-vue-tutorial/02-Vue_Directives/v-show.html)
     - [v-for.html](https://craigeniah.github.io/w3schools-vue-tutorial/02-Vue_Directives/v-for.html)
+
+Work In Progress ...
 
 ## 🛠️ Setup
 
@@ -49,9 +53,13 @@ w3schools-vue-tutorial/
 - Nested conditional statements
 - Image loading based on conditions
 
+Work In Progress ...
+
 ## 📝 Usage
 
 Each example is thoroughly commented and demonstrates different aspects of Vue.js conditional rendering using v-if, v-else-if, and v-else directives.
+
+Work In Progress ...
 
 ## 📜 License
 
