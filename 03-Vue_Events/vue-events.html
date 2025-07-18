@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3 Schools Vue Tutorial - Vue Events</title>
+</head>
+<body>
+
+    <div id="app">
+        <img src="https://www.w3schools.com/vue/img_moose.jpg" alt="Resting moose">
+        <p>Total Moose in the Forest: {{ mooseCount }}</p>
+        <br>
+
+        <!-- for every click increase the population of moose by 1 -->
+        <button v-on:click="mooseCount++">Increase Moose Population</button>
+    </div>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    // data properties
+                    mooseCount: 0,
+                }
+            }
+        });
+
+        app.mount('#app');
+    </script>
+</body>
+</html>
