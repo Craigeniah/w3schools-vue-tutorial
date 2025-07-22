@@ -28,6 +28,9 @@ w3schools-vue-tutorial/
     - [v-bind.html](https://craigeniah.github.io/w3schools-vue-tutorial/02-Vue_Directives/v-bind.html)
     - [v-show.html](https://craigeniah.github.io/w3schools-vue-tutorial/02-Vue_Directives/v-show.html)
     - [v-for.html](https://craigeniah.github.io/w3schools-vue-tutorial/02-Vue_Directives/v-for.html)
+- [03-Vue_Events/](https://github.com/Craigeniah/w3schools-vue-tutorial/tree/main/03-Vue_Events)
+    - [vue-events.html](https://craigeniah.github.io/w3schools-vue-tutorial/03-Vue_Events/vue-events.html)
+    - [v-on.html](https://craigeniah.github.io/w3schools-vue-tutorial/03-Vue_Events/v-on.html)
 
 Work In Progress ...
 

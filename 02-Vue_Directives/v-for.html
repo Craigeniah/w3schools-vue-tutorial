@@ -42,7 +42,7 @@
         <!-- example 2, loop through an Array using v-bind -->
         <p>Loop through an array:</p>
         <div>
-            <img v-for="x in manyFoods" :src="baseURL + x" alt="">
+            <img v-for="x in manyFoods" :src="x" alt="">
         </div>
 
         <br>
@@ -51,7 +51,7 @@
          <p>Loop through an array of objects:</p>
          <div>
             <figure v-for="x in arrayOfObjects">
-                <img :src="baseURL + x.url" :alt="x.name">
+                <img :src="x.url" :alt="x.name">
                 <figCaption>{{ x.name }}</figCaption>
             </figure>
          </div>
@@ -82,43 +82,42 @@
                         'scalloped potatoes',
                         'au gratin potatoes'
                     ],
-                    baseURL: 'https://www.w3schools.com/vue/',
                     manyFoods: [
-                        'img_salad.svg',
-                        'img_cake.svg',
-                        'img_soup.svg',
-                        'img_fish.svg',
-                        'img_pizza.svg',
-                        'img_rice.svg'
+                        '../assets/images/img_salad.svg',
+                        '../assets/images/img_cake.svg',
+                        '../assets/images/img_soup.svg',
+                        '../assets/images/img_fish.svg',
+                        '../assets/images/img_pizza.svg',
+                        '../assets/images/img_rice.svg'
                     ],
                     arrayOfObjects: [
                         {   
                             name: 'Burrito', 
-                            url: 'img_burrito.svg'
+                            url: '../assets/images/img_burrito.svg'
                         },
                         {   
                             name: 'Salad', 
-                            url: 'img_salad.svg'
+                            url: '../assets/images/img_salad.svg'
                         },
                         {   
                             name: 'Cake', 
-                            url: 'img_cake.svg'
+                            url: '../assets/images/img_cake.svg'
                         },
                         {   
                             name: 'Soup', 
-                            url: 'img_soup.svg'
+                            url: '../assets/images/img_soup.svg'
                         },
                         {   
                             name: 'Fish', 
-                            url: 'img_fish.svg'
+                            url: '../assets/images/img_fish.svg'
                         },
                         {   
                             name: 'Pizza', 
-                            url: 'img_pizza.svg'
+                            url: '../assets/images/img_pizza.svg'
                         },
                         {   
                             name: 'Rice', 
-                            url: 'img_rice.svg'
+                            url: '../assets/images/img_rice.svg'
                         }
                     ]
                 }

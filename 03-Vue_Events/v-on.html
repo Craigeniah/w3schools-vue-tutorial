@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3 Schools Vue Tutorial - Vue On</title>
+
+    <style>
+        #app div.box {
+            border: dashed black 1px;
+            display: inline-block;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        #app > button {
+            display: block;
+            margin: auto;
+        }
+
+        #lightDiv {
+            position: relative;
+            width: 150px;
+            height: 150px;
+        }
+
+        #lightDiv > img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        #lightDiv > div {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            background-color: yellow;
+        }
+  </style>
+</head>
+<body>
+
+    <div id="app">
+
+        <!-- example 1, onclick event -->
+        <h1>Example: Light Switch</h1>
+        <p>
+            The v-on directive is used on the button tag to listen to the 'click' event. When the 'click' 
+            event occurs the 'lightOn' data property is toggled between 'true' and 'false', making the 
+            yellow div behind the lightbulb visible/hidden by using the v-show directive.
+        </p>
+
+        <div class="box">
+            <div id="lightDiv">
+                <div v-show="lightOn"></div>
+                <img src="../assets/images/img_lightBulb.svg" alt="light bulb">
+            </div>
+            <button v-on:click="lightOn = !lightOn">Switch Light</button>
+        </div>
+
+    </div>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    // data properties
+                    lightOn: false,
+                }
+            }
+        });
+
+        app.mount('#app');
+    </script>
+</body>
+</html>
