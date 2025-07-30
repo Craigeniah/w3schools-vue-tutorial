@@ -61,6 +61,13 @@
             <button v-on:click="lightOn = !lightOn">Switch Light</button>
         </div>
 
+        <!-- example 2, oninput event -->
+        <!-- count the number of keystroke for an input text field -->
+<div class="box">
+    <input v-on:input="inpCount++">
+    <p>{{ 'Input events occured: ' + inpCount }}</p>
+</div>
+
     </div>
     
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -71,6 +78,7 @@
                 return {
                     // data properties
                     lightOn: false,
+                    inpCount: 0
                 }
             }
         });
