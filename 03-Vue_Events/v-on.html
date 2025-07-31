@@ -8,10 +8,15 @@
     <style>
         #app div.box {
             border: dashed black 1px;
-            display: inline-block;
-            padding-bottom: 10px;
-            text-align: center;
-            margin: 1rem;
+            display: block;
+            padding: 10px;
+            text-align: left;
+            margin: 1.5rem 0;
+        }
+
+        div.box span {
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
         }
 
         #app > button {
@@ -19,19 +24,20 @@
             margin: auto;
         }
 
-        #lightDiv {
+        .light-div {
             position: relative;
             width: 150px;
             height: 150px;
+            /* margin: 0 auto; */
         }
 
-        #lightDiv > img {
+        .light-div > img {
             position: relative;
             width: 100%;
             height: 100%;
         }
 
-        #lightDiv > div {
+        .light-div > div {
             position: absolute;
             top: 10%;
             left: 10%;
@@ -40,6 +46,29 @@
             border-radius: 50%;
             background-color: yellow;
         }
+
+        #changeColorBox {
+            width: 200px;
+            height: 80px;
+            padding: 15px;
+        }
+
+        .cursor-pointer:hover {
+            cursor: pointer;
+            background-color: rgb(224, 224, 224);
+        }
+
+        #foodBox img {
+            max-width: 150px;
+            height: auto;
+            float: right;
+        }
+
+        #foodBox li {
+             width: 80px;
+        }
+
+
   </style>
 </head>
 <body>
@@ -47,7 +76,7 @@
     <div id="app">
 
         <!-- example 1, onclick event -->
-        <h1>Example: Light Switch</h1>
+        <h2>Example 1: Light Switch</h1>
         <p>
             The v-on directive is used on the button tag to listen to the 'click' event. When the 'click' 
             event occurs the 'lightOn' data property is toggled between 'true' and 'false', making the 
@@ -55,7 +84,7 @@
         </p>
 
         <div class="box">
-            <div id="lightDiv">
+            <div class="light-div">
                 <div v-show="lightOn"></div>
                 <img src="../assets/images/img_lightBulb.svg" alt="light bulb">
             </div>
@@ -64,10 +93,61 @@
 
         <!-- example 2, oninput event -->
         <!-- count the number of keystroke for an input text field -->
-<div class="box">
-    <input v-on:input="inpCount++">
-    <p>{{ 'Input events occured: ' + inpCount }}</p>
-</div>
+        <h2>Example 2: Count Input Events</h1>
+        <p>Start typing in the input element and see the keystroke count rise.</p>
+
+        <div class="box">
+            <input v-on:input="inpCount++" placeholder="Start writing...">
+            <p>{{ 'Input events occured: ' + inpCount }}</p>
+        </div>
+
+        <!-- example 3, mousemove event -->
+        <h2>Example 3: Change Color</h2>
+        <p>Move the mouse pointer over the box below to change the background-color randomly with hsl color code.</p>
+
+        <div class="box">
+            <div 
+                id="changeColorBox"
+                v-on:mousemove=" colorVal = Math.floor(Math.random()*360)"
+                :style="{ backgroundColor: 'hsl(' + colorVal + ', 60%, 60%)' }"
+            >
+                <p>
+                    <span>
+                        backgroundColor: hsl(<strong>{{ colorVal }}</strong>, 60%, 60%)
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <!-- example 4, v-on in a v-for loop -->
+        <!-- display a list based on the food array and add a click event for each item that will use a value from the array to change the img src -->
+
+        <h2>Example 4: Show Food Image</h2>
+        <p>Click on a food name below to see an image of it.</p>
+        <div class="box" id="foodBox">
+            <img :src="imgURL" alt="pizza">
+            <ol>
+                <li 
+                    v-for="food in manyFoods"
+                    v-on:click=" imgURL = food.url"
+                    class="cursor-pointer"
+                >
+                    <!-- placeholder for generated code -->
+                    {{ food.name }}
+                </li>
+            </ol>
+        </div>
+
+        <!-- example 5, v-on shorthand is simply '@' -->
+        <h2>Example 5: V-On Shorthand is simply '@'</h2>
+        <p>With the v-on shorthand we can write '@:click' instead of 'v-on:click'.</p>
+        <div class="box">
+            <div class="light-div">
+                <div v-show="lightOn"></div>
+                <img src="../assets/images/img_lightBulb.svg" alt="light bulb">
+            </div>
+            <button @:click="lightOn = !lightOn">Switch Light</button>
+        </div>
 
     </div>
     
@@ -79,7 +159,39 @@
                 return {
                     // data properties
                     lightOn: false,
-                    inpCount: 0
+                    inpCount: 0,
+                    colorVal: 50,
+                    imgURL: '../assets/images/img_pizza.svg',
+                    manyFoods: [
+                        {   
+                            name: 'Burrito', 
+                            url: '../assets/images/img_burrito.svg'
+                        },
+                        {   
+                            name: 'Salad', 
+                            url: '../assets/images/img_salad.svg'
+                        },
+                        {   
+                            name: 'Cake', 
+                            url: '../assets/images/img_cake.svg'
+                        },
+                        {   
+                            name: 'Soup', 
+                            url: '../assets/images/img_soup.svg'
+                        },
+                        {   
+                            name: 'Fish', 
+                            url: '../assets/images/img_fish.svg'
+                        },
+                        {   
+                            name: 'Pizza', 
+                            url: '../assets/images/img_pizza.svg'
+                        },
+                        {   
+                            name: 'Rice', 
+                            url: '../assets/images/img_rice.svg'
+                        }
+                    ],
                 }
             }
         });
