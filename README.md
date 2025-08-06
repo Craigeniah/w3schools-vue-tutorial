@@ -21,16 +21,24 @@ Work In Progress ...
 ## 📋 Project Structure
 
 w3schools-vue-tutorial/
-- [01-Vue_Intro/](https://github.com/Craigeniah/w3schools-vue-tutorial/tree/main/01-Vue_Intro)
-    - [index.html](https://craigeniah.github.io/w3schools-vue-tutorial/01-Vue_Intro/index.html)
-- [02-Vue_Directives/](https://github.com/Craigeniah/w3schools-vue-tutorial/tree/main/02-Vue_Directives)
-    - [v-if.html](https://craigeniah.github.io/w3schools-vue-tutorial/02-Vue_Directives/v-if.html)
-    - [v-bind.html](https://craigeniah.github.io/w3schools-vue-tutorial/02-Vue_Directives/v-bind.html)
-    - [v-show.html](https://craigeniah.github.io/w3schools-vue-tutorial/02-Vue_Directives/v-show.html)
-    - [v-for.html](https://craigeniah.github.io/w3schools-vue-tutorial/02-Vue_Directives/v-for.html)
-- [03-Vue_Events/](https://github.com/Craigeniah/w3schools-vue-tutorial/tree/main/03-Vue_Events)
-    - [vue-events.html](https://craigeniah.github.io/w3schools-vue-tutorial/03-Vue_Events/vue-events.html)
-    - [v-on.html](https://craigeniah.github.io/w3schools-vue-tutorial/03-Vue_Events/v-on.html)
+├── Lessons/
+│   ├── [02-Vue_Intro.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/02-Vue_Intro.html)
+│   ├── [03-v-bind.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/03-v-bind.html)
+│   ├── [04-v-if.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/04-v-if.html)
+│   ├── [05-v-show.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/05-v-show.html)
+│   ├── [06-v-for.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/06-v-for.html)
+│   ├── [07-vue-events.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/07-vue-events.html)
+│   └── [08-v-on.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/08-v-on.html)
+│
+└── assets/
+    └── images/
+        ├── img_burrito.svg
+        ├── img_cake.svg
+        ├── img_fish.svg
+        ├── img_pizza.svg
+        ├── img_rice.svg
+        ├── img_salad.svg
+        └── img_soup.svg
 
 Work In Progress ...
 
@@ -63,6 +71,9 @@ Work In Progress ...
 Each example is thoroughly commented and demonstrates different aspects of Vue.js conditional rendering using v-if, v-else-if, and v-else directives.
 
 Work In Progress ...
+
+## @TODOs
+- refactor so that they aren't in folders since the tutorials don't really follow that, just make each page a number and title like: 01-Vue_Home.html, 2-v-bind.html etc.
 
 ## 📜 License
 
