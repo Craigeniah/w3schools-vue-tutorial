@@ -27,8 +27,9 @@ w3schools-vue-tutorial/
 │   ├── [04-v-if.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/04-v-if.html)
 │   ├── [05-v-show.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/05-v-show.html)
 │   ├── [06-v-for.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/06-v-for.html)
-│   ├── [07-vue-events.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/07-vue-events.html)
+│   ├── [07-Vue-Events.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/07-Vue-Events.html)
 │   └── [08-v-on.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/08-v-on.html)
+│   └── [09-Vue_Methods.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/09-Vue_Methods.html)
 │
 └── assets/
     └── images/
@@ -73,7 +74,8 @@ Each example is thoroughly commented and demonstrates different aspects of Vue.j
 Work In Progress ...
 
 ## @TODOs
-- refactor so that they aren't in folders since the tutorials don't really follow that, just make each page a number and title like: 01-Vue_Home.html, 2-v-bind.html etc.
+- properly title each page
+- add proper h2's for each page section to clearly explain examples
 
 ## 📜 License
 
