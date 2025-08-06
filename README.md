@@ -23,13 +23,13 @@ Work In Progress ...
 w3schools-vue-tutorial/
 ├── Lessons/
 │   ├── [02-Vue_Intro.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/02-Vue_Intro.html)
-│   ├── [03-v-bind.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/03-v-bind.html)
-│   ├── [04-v-if.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/04-v-if.html)
-│   ├── [05-v-show.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/05-v-show.html)
-│   ├── [06-v-for.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/06-v-for.html)
-│   ├── [07-Vue-Events.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/07-Vue-Events.html)
-│   └── [08-v-on.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/08-v-on.html)
-│   └── [09-Vue_Methods.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/09-Vue_Methods.html)
+│   ├── [04-v-bind.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/04-v-bind.html)
+│   ├── [05-v-if.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/05-v-if.html)
+│   ├── [06-v-show.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/06-v-show.html)
+│   ├── [07-v-for.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/07-v-for.html)
+│   ├── [08-Vue-Events.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/08-Vue-Events.html)
+│   ├── [09-v-on.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/09-v-on.html)
+│   └── [10-Vue_Methods.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/10-Vue_Methods.html)
 │
 └── assets/
     └── images/
