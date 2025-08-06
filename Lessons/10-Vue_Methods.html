@@ -5,9 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>W3 Schools Vue Tutorial</title>
 
+    <style>
+        #app div.box {
+            border: dashed black 1px;
+            display: block;
+            padding: 10px;
+            text-align: left;
+            margin: 1.5rem 0;
+        }
+
+        div.box span {
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #app > button {
+            display: block;
+            margin: auto;
+        }
+
+        .methodBox {
+            width: 140px;
+            height: 60px;
+            background-color: lightgreen;
+            padding: 20px;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
+
+        <!-- To call the 'writeText' method when we click the <div> element we can write the code below: -->
+        <h2>Example 1: Click to run a method</h2>
+        <div class="box">
+            <p>Click on the box below:</p>
+            <div class="methodBox" @click="writeText">
+                {{ text }}
+            </div>
+        </div>
+
+        <!-- 
+            The v-on directive is used on the <div> element to listen to the 'mousemove' event. When the 'mousemove' event occurs 
+            the 'mousePos' method is called and the event object is sent with the method by default so we can get the mouse pointer position.
+            We must use the this. prefix to refer to "xPos" inside the Vue instance data property from the method. 
+        -->
+        <h2>Example 2: Mouse Pointer Position</h2>
+        <div class="box">
+            <p>Move the mouse pointer over the box below:</p>
+            <div class="methodBox" v-on:mousemove="mousePos">
+                <span>xPos: {{ xPos }}</span>
+                <br>
+                <span>yPos: {{ yPos }}</span>
+            </div>
+        </div>
+
+        <!-- 
+            If we expand the example above by just one line, we can also make the background color change based on the mouse pointer position 
+            in the x-direction. The only thing we need to add is v-bind to change the background-color in the style attribute:
+
+            The difference here from the example above is that the background color is bound to 'xPos' with v-bind so that hsl 'hue' 
+            value is set equal to 'xPos'.
+        -->
+        <h2>Example 3: Mouse Pointer Position + Background Color Change</h2>
+        <div class="box">
+            <p>Move the mouse pointer over the box below:</p>
+            <div class="methodBox" v-on:mousemove="mousePos" :style="{backgroundColor: 'hsl('+ xPos +', 80%, 80%)'}">
+                <span>xPos: {{ xPos }}</span>
+                <br>
+                <span>yPos: {{ yPos }}</span>
+            </div>
+
+            <p>CSS:<br>backgroundColor:'hsl(<strong>{{xPos}}</strong>,80%,80%)'</p>
+        </div>
 
     </div>
     
@@ -17,7 +88,21 @@
         const app = Vue.createApp({
             data() {
                 return {
-                    //
+                    text: '',
+                    xPos: 0,
+                    yPos: 0
+                }
+            },
+            // Vue property called methods, this is where we store our functions
+            methods: {
+                writeText() {
+                    // using this, because we are referring to this instance of vue, and it's data property variable called text
+                    // Tip: We need to write this. as prefix to refer to a data property from inside a method.
+                    this.text = 'Hello World!';
+                },
+                mousePos(event) {
+                    this.xPos = event.offsetX;
+                    this.yPos = event.offsetY;
                 }
             }
         });
