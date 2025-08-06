@@ -85,7 +85,8 @@
         -->
         <h2>Example 4: Notebook</h2>
         <div class="box">
-            <textarea></textarea>
+            <textarea v-on:input="writeText" placeholder="Start writing..."></textarea>
+            <span>{{ text }}</span>
         </div>
 
 
@@ -97,7 +98,7 @@
         const app = Vue.createApp({
             data() {
                 return {
-                    text: '',
+                    text: 'Hello World!',
                     xPos: 0,
                     yPos: 0
                 }
@@ -107,7 +108,7 @@
                 writeText() {
                     // using this, because we are referring to this instance of vue, and it's data property variable called text
                     // Tip: We need to write this. as prefix to refer to a data property from inside a method.
-                    this.text = 'Hello World!';
+                    this.text = event.target.value;
                 },
                 mousePos(event) {
                     this.xPos = event.offsetX;
