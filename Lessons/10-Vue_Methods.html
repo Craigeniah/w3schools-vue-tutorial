@@ -85,10 +85,19 @@
         -->
         <h2>Example 4: Notebook</h2>
         <div class="box">
-            <textarea v-on:input="writeText" placeholder="Start writing..."></textarea>
-            <p>{{ text }}</p>
+            <textarea v-on:input="writeText2" placeholder="Start writing..."></textarea>
+            <p>{{ text2 }}</p>
         </div>
 
+        <!-- we pass the num arguments to the methods in the buttons on click -->
+        <h2>Example 5: Passing Arguments with Methods</h2>
+        <div class="box">
+            <img src="../assets/images/img_moose.jpg" alt="moose"><br>
+            <button v-on:click="addMoose(1)">+1</button>
+            <button v-on:click="addMoose(-1)">-1</button>
+            <button v-on:click="addMoose(5)">+5</button>
+            <p>{{ 'Total Moose: ' + count }}</p>
+        </div>
 
     </div>
     
@@ -98,9 +107,11 @@
         const app = Vue.createApp({
             data() {
                 return {
-                    text: 'Hello World!',
+                    text: '',
+                    text2: '',
                     xPos: 0,
-                    yPos: 0
+                    yPos: 0,
+                    count: 0
                 }
             },
             // Vue property called methods, this is where we store our functions
@@ -108,11 +119,19 @@
                 writeText() {
                     // using this, because we are referring to this instance of vue, and it's data property variable called text
                     // Tip: We need to write this. as prefix to refer to a data property from inside a method.
-                    this.text = event.target.value;
+                    this.text = 'Hello World!'
+                },
+                writeText2() {
+                    this.text2 = event.target.value;
                 },
                 mousePos(event) {
                     this.xPos = event.offsetX;
                     this.yPos = event.offsetY;
+                },
+                addMoose(num) {
+                    this.count+=num;
+                    // same as doing:
+                    //this.count = this.count + num;
                 }
             }
         });
