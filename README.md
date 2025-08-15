@@ -33,13 +33,20 @@ w3schools-vue-tutorial/
 │
 └── assets/
     └── images/
+        ├── cowboy-bebop-jet-black.gif
         ├── img_burrito.svg
         ├── img_cake.svg
         ├── img_fish.svg
+        ├── img_kangaroo_square.jpeg
+        ├── img_lightBulb.svg
+        ├── img_moose.jpg
         ├── img_pizza.svg
         ├── img_rice.svg
         ├── img_salad.svg
-        └── img_soup.svg
+        ├── img_soup.svg
+        ├── img_tiger_square.jpeg
+        ├── see-you-space-cowboy_bang.jpg
+        └── vash-worming-around.gif
 
 Work In Progress ...
 
