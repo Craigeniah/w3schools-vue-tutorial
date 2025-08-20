@@ -1,0 +1,56 @@
+#app div.box {
+    border: dashed black 1px;
+    display: block;
+    padding: 10px;
+    text-align: left;
+    margin: 1.5rem 0;
+}
+
+div.flex {
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* flex-basis:3; */
+}
+
+div.flex .inner-box {
+    background-color: beige;
+    width: 100%;
+    min-height: 150px;
+    margin: 1rem;
+    text-align: center;
+}
+
+div.flex .inner-box img{
+    max-width: 200px;
+    margin: 0.5rem auto;
+    display: block;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+div.box span {
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#app > button {
+    display: block;
+    margin: auto;
+}
+
+.methodBox {
+    width: 140px;
+    height: 60px;
+    background-color: lightgreen;
+    padding: 20px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.text-green {
+    background-color: lightgreen;
+    display: inline-block;
+}

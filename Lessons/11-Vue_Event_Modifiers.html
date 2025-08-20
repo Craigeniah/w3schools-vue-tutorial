@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3 Schools Vue Tutorial - Vue Event Modifiers</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+
+        <h2>Example 1: Create Alert Only Once</h2>
+        <div class="box">
+            <p>The button below creates an alert in a pop-up box, but only on the first click:</p>
+            <button @click.once="createAlert">Create Alert</button>
+        </div>
+
+        <h2>Example 2: Find The Keyboard Key Value Start writing inside the text</h2>
+        <div class="box">
+            <p>Start writing inside the text box to record the key value:</p>
+            <input type="text" @keydown="getKey">
+            <p>Current Key Value: {{ keyValue }}</p>
+        </div>
+
+        <h2>Example 3: 'S' Key Generates Alert</h2>
+        <div class="box">
+            <p>The 'S' key generates an alert:</p>
+            <textarea @keydown.s="sKeyTyped" placeholder="Start writing..."></textarea>
+        </div>
+
+        <h2>Example 4: 'S' and 'Ctrl' Combination Generates Alert</h2>
+        <small>Also added .prevent to keep page from trying to save file by default</small>
+        <div class="box">
+            <p>Press 'Ctrl' and 'S' in combination to generate an alert:</p>
+            <!-- added .prevent modifier so that it would keep the page from opening the save dialog -->
+            <textarea @keydown.ctrl.s.prevent="ctrlSKeyTyped" placeholder="Start writing..."></textarea>
+        </div>
+
+        <!-- left off on mouse button modifiers -->
+
+    </div>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    // data
+                    keyValue: '',
+                }
+            },
+            methods: {
+                createAlert() {
+                    alert("Alert created from button click");
+                },
+                // i don't actually have to write event here, but it's nice to show that it's passing that value as a parameter
+                getKey(event) {
+                    this.keyValue = event.key;
+                },
+                sKeyTyped() {
+                    alert(`You typed the 's' key bruh!`);
+                },
+                ctrlSKeyTyped() {
+                    alert(`You typed 'Ctrl + S' Keys`);
+                }
+            }
+        });
+
+        app.mount('#app');
+    </script>
+</body>
+</html>

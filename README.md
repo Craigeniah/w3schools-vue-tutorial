@@ -29,7 +29,10 @@ w3schools-vue-tutorial/
 │   ├── [07-v-for.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/07-v-for.html)
 │   ├── [08-Vue-Events.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/08-Vue-Events.html)
 │   ├── [09-v-on.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/09-v-on.html)
-│   └── [10-Vue_Methods.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/10-Vue_Methods.html)
+│   ├── [10-Vue_Methods.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/10-Vue_Methods.html)
+│   └── [11-Vue_Event_Modifiers.html](https://craigeniah.github.io/w3schools-vue-tutorial/Lessons/11-Vue_Event_Modifiers.html)
+├── styles/
+│   └── styles.css
 │
 └── assets/
     └── images/
@@ -83,6 +86,8 @@ Work In Progress ...
 ## @TODOs
 - properly title each page
 - add proper h2's for each page section to clearly explain examples
+- migrate all inline styles to styles.css
+- update all existing lessons to use the external stylesheet
 
 ## 📜 License
 
