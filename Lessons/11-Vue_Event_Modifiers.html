@@ -35,6 +35,12 @@
             <p>Press 'Ctrl' and 'S' in combination to generate an alert:</p>
             <!-- added .prevent modifier so that it would keep the page from opening the save dialog -->
             <textarea @keydown.ctrl.s.prevent="ctrlSKeyTyped" placeholder="Start writing..."></textarea>
+        </div>        
+        
+        <h2>Example 5: </h2>
+        <div class="box">
+            <p></p>
+            <div @click="changeBGOnRightClick"></div>
         </div>
 
         <!-- left off on mouse button modifiers -->
@@ -64,6 +70,9 @@
                 },
                 ctrlSKeyTyped() {
                     alert(`You typed 'Ctrl + S' Keys`);
+                },
+                changeBGOnRightClick() {
+                    // 
                 }
             }
         });
