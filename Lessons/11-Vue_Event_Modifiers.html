@@ -37,10 +37,17 @@
             <textarea @keydown.ctrl.s.prevent="ctrlSKeyTyped" placeholder="Start writing..."></textarea>
         </div>        
         
-        <h2>Example 5: </h2>
+        <h2>Example 5: Right Mouse Button Event</h2>
         <div class="box">
-            <p></p>
-            <div @click="changeBGOnRightClick"></div>
+            <p>Press right mouse button here.</p>
+
+            <!-- also preventing default so it doesn't try to open windows dialog box -->
+            <div 
+                @click.right.prevent="changeBGOnRightClick" 
+                :style="{ backgroundColor: 'hsl(' + bgColor + ', 80%, 80%)'}"
+                class="color-box"
+            >
+            </div>
         </div>
 
         <!-- left off on mouse button modifiers -->
@@ -55,6 +62,8 @@
                 return {
                     // data
                     keyValue: '',
+                    bgColorChange: false,
+                    bgColor: 0
                 }
             },
             methods: {
@@ -72,7 +81,14 @@
                     alert(`You typed 'Ctrl + S' Keys`);
                 },
                 changeBGOnRightClick() {
-                    // 
+                    this.bgColor+=50;
+                },                
+                changeBGOnRightClick2() {
+                    if (this.bgColorChange === true) {
+                        this.bgColorChange = false;
+                    } else {
+                        this.bgColorChange = true;
+                    }
                 }
             }
         });

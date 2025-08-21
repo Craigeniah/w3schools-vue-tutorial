@@ -54,3 +54,16 @@ div.box span {
     background-color: lightgreen;
     display: inline-block;
 }
+
+.pinkBG {
+    background-color: lightpink;
+    height: 500px;
+    width: 500px;
+    display: grid;
+    place-items: center;
+}
+
+.color-box {
+    height: 200px;
+    width: 200px;
+}
