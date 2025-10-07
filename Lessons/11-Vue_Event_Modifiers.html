@@ -50,6 +50,29 @@
             </div>
         </div>
 
+        <h2>Example 6: Right Mouse Button Event Combo</h2>
+        <div class="box">
+            <p>Click right mouse button in combination with the 'ctrl' key to change color in the DIV element.</p>
+
+            <!-- also preventing default so it doesn't try to open windows dialog box -->
+            <div 
+                @click.right.ctrl.prevent="changeBGOnRightClick2" 
+                :style="{ backgroundColor: 'hsl(' + bgColor2 + ', 80%, 80%)'}"
+                class="color-box"
+            >
+            </div>
+        </div>
+
+        <h2>Skipping Example 7: Prevent default</h2>
+        <p>We show this example in the previous two examples.</p>
+
+        <h2>Example 8: left mouse click</h2>
+        <div class="box">
+            <p>Press the 'Shift' keyboard key while you do a left mouse button click on the image below to change it.</p>
+
+            <img @click.left.shift.prevent="changeImgOnClick" class="change-img-thumbnail" :src="'../assets/images/' + imgUrl">
+        </div>
+
         <!-- left off on mouse button modifiers -->
 
     </div>
@@ -63,7 +86,15 @@
                     // data
                     keyValue: '',
                     bgColorChange: false,
-                    bgColor: 0
+                    bgColor: 0,
+                    bgColor2: 50,
+                    imgUrlIndex: 0,
+                    imgUrl: 'img_tiger_square.jpeg',
+                    images: [
+                        'img_tiger_square.jpeg',
+                        'img_kangaroo_square.jpeg',
+                        'img_moose.jpg'
+                    ]
                 }
             },
             methods: {
@@ -84,11 +115,15 @@
                     this.bgColor+=50;
                 },                
                 changeBGOnRightClick2() {
-                    if (this.bgColorChange === true) {
-                        this.bgColorChange = false;
-                    } else {
-                        this.bgColorChange = true;
+                    this.bgColor2+=50;
+                },
+                changeImgOnClick() {
+                    this.imgUrlIndex++;
+                    if (this.imgUrlIndex >= 3) {
+                        // set to 0 if it grows equal to 3 or more
+                        this.imgUrlIndex = 0;
                     }
+                    this.imgUrl = this.images[this.imgUrlIndex];
                 }
             }
         });

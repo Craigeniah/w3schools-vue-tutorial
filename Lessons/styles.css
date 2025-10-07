@@ -67,3 +67,8 @@ div.box span {
     height: 200px;
     width: 200px;
 }
+
+.change-img-thumbnail {
+    width: 200px;
+    height: auto;
+}
