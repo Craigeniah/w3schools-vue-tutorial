@@ -10,10 +10,52 @@
 <body>
     <div id="app">
 
-        <h2>Example 1:</h2>
-        <div class="box">
-            <p></p>
+        <h2>Example 1: Two-way Binding</h2>
+        <p>The inpText property is bound two ways: From the input element to the Vue property, and from the Vue property to the input element.</p>
+        <p>Try changing the input field and see how the Vue property value updates. Try also to change the inpText property value inside the code, click 'Run', and see how the input elements value changes.</p>
 
+        <div class="box">
+            <input type="text" name="inpText" id="inpText" v-model="inpText">
+            <p> {{ inpText }} </p>
+        </div>
+
+        <h2>Example 2: Important Checkbox</h2>
+        <p>This 'important' checkbox is a dynamic form feature that will be added to a shoppinglist form later, but we isolate it here first to easier see how it works.</p>
+
+        <div class="box">
+            <p>Item is important? 
+                <label for="important" class="checkbox-label">
+                    <input type="checkbox" name="important" id="important" v-model="important">
+                    {{ important }}
+                </label>
+            </p>
+        </div>
+
+
+        <h2>Example 3: Shopping List With Important Items </h2>
+        <p>In this version of our shopping list the user can define if an item is important. The checkbox is more dynamic because the 'true' or 'false' text changes to show the status when the user checks it.</p>
+        <div class="box">
+
+            <form @submit.prevent="addItem">
+                <p>What do you need?<br>
+                    <input type="text" required v-model="itemName">
+                </p>
+                <p>How many?<br>
+                    <input type="number" v-model="itemNumber">
+                </p>
+                <p>Item is important?
+                    <label for="itemImportance" class="checkbox-label">
+                        <input type="checkbox" name="itemImportance" id="itemImportance" v-model="itemImportance">
+                        {{ itemImportance }}
+                    </label>
+                </p>
+                <button type="submit">Add item</button>
+            </form>
+
+            <p>Shopping List:</p>
+            <ul class="dynamic-list">
+                <li v-for="item in shoppingList" v-bind:class="{ important: item.importance }">{{ item.name }}, {{ item.number }}</li>
+            </ul>
 
         </div>
 
@@ -27,10 +69,33 @@
             data() {
                 return {
                     // data
+                    inpText: 'Initial text',
+                    important: false,
+                    itemName: null,
+                    itemNumber: null,
+                    itemImportance: false,
+                    shoppingList: [
+                        { name: 'Tomatoes', number: 5, importance: false }
+                    ]
                 }
             },
             methods: {
-                //
+                addItem() {
+                    // setup the item to push to the shopping list array
+                    let item = {
+                        name: this.itemName,
+                        number: this.itemNumber,
+                        importance: this.itemImportance
+                    }
+                
+                    // add item to the shopping list
+                    this.shoppingList.push(item);
+
+                    // resetting the itemName and itemNumber
+                    this.itemName = null;
+                    this.itemNumber = null;
+                    this.itemImportance = false;
+                }
             }
         });
 
