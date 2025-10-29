@@ -10,9 +10,21 @@
 <body>
     <div id="app">
 
-        <h2>Example 1:</h2>
+        <h2>Example 1: Shopping List</h2>
         <div class="box">
-            <p></p>
+
+            <form @submit.prevent="addItem">
+                <p>Add item</p>
+                <p>Item name: <input type="text" required v-model="itemName"></p>
+                <p>How many: <input type="number" v-model="itemNumber"></p>
+                <button type="submit">Add item</button>
+            </form>
+
+            <p>Shopping List:</p>
+            <ul>
+                <li v-for="item in shoppingList">{{ item.name }}, {{ item.number }}</li>
+            </ul>
+
         </div>
 
 
@@ -25,10 +37,28 @@
             data() {
                 return {
                     // data
+                    itemName: null,
+                    itemNumber: null,
+                    shoppingList: [
+                        { name: 'Tomatoes', number: 5 }
+                    ]
                 }
             },
             methods: {
-                // 
+                addItem() {
+                    // setup the item to push to the shopping list array
+                    let item = {
+                        name: this.itemName,
+                        number: this.itemNumber
+                    }
+                
+                    // add item to the shopping list
+                    this.shoppingList.push(item);
+
+                    // resetting the itemName and itemNumber
+                    this.itemName = null;
+                    this.itemNumber = null;
+                }
             }
         });
 
